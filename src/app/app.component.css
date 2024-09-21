@@ -1,0 +1,30 @@
+
+.contaier{
+   margin: auto;
+   width: calc(100%);
+   display: flex;
+   flex-wrap: wrap;
+}
+.items{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width: calc(50%);
+    background-color: gainsboro;
+}
+.main-backgorund{
+    width: calc(50%);
+}
+.app-burger-item{
+    width: calc(100%);
+    overflow-y: scroll;
+}
+
+.order{
+    background-image: url(/images/best-burger-background.jpg);
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}

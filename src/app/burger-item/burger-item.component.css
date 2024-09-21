@@ -1,0 +1,51 @@
+.contaier{
+    margin: auto;
+    width: calc(100% - 20px);
+}
+.ingredients{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+}
+.menu{
+    display: flex;
+    flex-direction: column;
+    
+}
+.app-menu{
+    display: flex;
+    gap: 8px;
+}
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+}
+button{
+    padding: 3px 80px;
+    border-radius: 20px;
+    color: white;
+    border: 0px;
+    font-size: medium;
+}
+.finish{
+    background-color: rgb(0, 110, 255);
+    margin-right: 10px;
+    
+}
+.clear{
+    background-color: red;
+    border: 0px;
+}
+.burger-items{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+   
+}
+ul li{
+    list-style: none;
+}

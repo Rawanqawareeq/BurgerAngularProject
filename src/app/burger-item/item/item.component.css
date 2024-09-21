@@ -1,0 +1,29 @@
+.burger-item{
+    display: flex;
+    background-color: white;
+    align-items: center;
+    justify-content:space-between;
+    padding: 0 10px;
+}
+.btn{
+    display: flex;
+    align-items: center;
+    justify-items:space-between;
+    gap: 10px;
+   
+}
+.btn button{
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 0;
+    background-color: rgb(0, 110, 255);
+    color: white;
+    font-size: medium;
+
+}
+.ingredient-name{
+    padding: 0 20px;
+}
+.ingredient-name span{
+    margin-right: 10px;
+}

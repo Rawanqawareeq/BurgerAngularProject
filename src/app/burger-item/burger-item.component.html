@@ -1,0 +1,23 @@
+<div class="contaier">
+  <div class="menu">
+    <h2>Choose a burger from our menu</h2>
+    <app-menu class="app-menu"></app-menu>
+
+  </div>
+
+  <div class="ingredients">
+    <h2>Add Ingredients to your burger</h2>
+    <ul class="burger-items">
+      <li *ngFor="let burger of burgers |slice:2" >
+        <app-item [path]="'/images/bread-top.png'" [price]=burger.price [name]=burger.name></app-item>
+      </li>
+    </ul>
+   
+   <p>Total Price : $20</p>
+  </div> 
+  <div class="btn">
+     <button class="finish"  routerLink="/order">Finish</button>
+     <button class="clear">Clear</button>
+  </div>
+</div>
+

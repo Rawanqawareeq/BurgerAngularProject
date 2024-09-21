@@ -10,10 +10,11 @@
   },
   "files": [
     "src/main.ts",
-    "src/main.server.ts",
+    "src/app/app.module.ts",
     "server.ts"
   ],
   "include": [
     "src/**/*.d.ts"
   ]
 }
+ 
