@@ -5,6 +5,7 @@ import { CommonModule, NgFor } from '@angular/common';
 import { ItemComponent } from "./item/item.component";
 import { MenuComponent } from "../menu/menu.component";
 import { RouterLink } from '@angular/router';
+import { ItemService } from './item/item.service';
 
 @Component({
   selector: 'app-burger-item',
@@ -14,7 +15,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './burger-item.component.css'
 })
 export class BruggerItemComponent  implements OnInit {
-  private burrgerService = inject(BruggerItemService);
+  constructor(private burrgerService:BruggerItemService ,private itemSeervice :ItemService){}
   private DestroyRef = inject(DestroyRef);
   burgers: Burger[] =[];
   ngOnInit(): void {
@@ -22,6 +23,10 @@ export class BruggerItemComponent  implements OnInit {
       next: (data) =>  this.burgers = data,
       error: (error) => console.error('Error:', error)
     });
+this.itemSeervice.ingredients$.subscribe((value) => {
+ console.log(value);
+});
+
     this.DestroyRef.onDestroy(()=>{
       subscription.unsubscribe();
      });

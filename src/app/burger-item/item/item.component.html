@@ -1,9 +1,9 @@
 <div class="burger-item" >
     <img [src]="path" height="50px" width="100px">
-<h3 class="ingredient-name"><span>10</span>{{name}}</h3>
+<h3 class="ingredient-name"><span>1</span>{{name}}</h3>
 <div class="btn">
-    <button (click)="increment()">+</button>
-    <button (click)="decrement()">-</button>
+    <button (click)="increment(name)" >+</button>
+    <button (click)="decrement(name)">-</button>
   </div>
 </div>
 

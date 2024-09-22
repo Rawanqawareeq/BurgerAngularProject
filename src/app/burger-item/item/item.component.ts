@@ -9,20 +9,21 @@ import { subscribe } from 'diagnostics_channel';
   templateUrl: './item.component.html',
   styleUrl: './item.component.css'
 })
-export class ItemComponent {
+export class ItemComponent implements OnInit {
   @Input() price!: number;
   @Input() name!: string;
   @Input() path!: string;
-  private itemService = inject(ItemService);
+  count:any;
+  constructor(private itemService :ItemService){}
  
-  increment(){
-    this.itemService.increment();
+  ngOnInit(): void {
+    this.count = this.itemService.ingredients;
   }
-  decrement(){
-    this.itemService.decrement();
+  increment(name:any){
+       this.itemService.increment(name)
   }
-  getCount(){
-    this.itemService.getCount();
+  decrement(name:any){
+    this.itemService.decrement()
   }
 
 }

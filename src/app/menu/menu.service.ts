@@ -10,6 +10,7 @@ export class MenuService {
  private httpClient = inject(HttpClient);
  private destroyRef = inject(DestroyRef);
  private burger = signal<Menu[]>([]);
+ 
 
   constructor() { }
   loadMenu(){

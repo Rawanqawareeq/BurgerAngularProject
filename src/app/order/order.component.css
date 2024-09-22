@@ -1,4 +1,11 @@
-
+.order{
+    background-image: url(/images/best-burger-background.jpg);
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
 .order-details{
     background-color: white;
     display: inline-block;

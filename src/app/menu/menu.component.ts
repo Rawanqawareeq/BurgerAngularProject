@@ -3,6 +3,7 @@ import { MenuService } from './menu.service';
 import { Menu } from './menu.module';
 import { NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { ItemService } from '../burger-item/item/item.service';
 
 @Component({
   selector: 'app-menu',
@@ -11,7 +12,9 @@ import { RouterLink } from '@angular/router';
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css'
 })
+
 export class MenuComponent implements OnInit {
+   constructor(private itemService : ItemService){} 
    private menuService = inject(MenuService);
    private DestroyRef = inject(DestroyRef);
    Menu : Menu[] =[];
@@ -24,5 +27,7 @@ export class MenuComponent implements OnInit {
       subscription.unsubscribe();
     })
   }
-   
+  onClick(){
+      this.itemService.onBurgerTypechange();
+  }
 }
