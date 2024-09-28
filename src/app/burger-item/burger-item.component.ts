@@ -15,21 +15,31 @@ import { ItemService } from './item/item.service';
   styleUrl: './burger-item.component.css'
 })
 export class BruggerItemComponent  implements OnInit {
-  constructor(private burrgerService:BruggerItemService ,private itemSeervice :ItemService){}
+  constructor(private burrgerService:BruggerItemService ,private itemService :ItemService){}
   private DestroyRef = inject(DestroyRef);
   burgers: Burger[] =[];
+  price :number =0;
   ngOnInit(): void {
     const subscription = this.burrgerService.loadBurgger().subscribe({
-      next: (data) =>  this.burgers = data,
+      next: (data) =>  {this.burgers = data;
+                       this.getprice() },
       error: (error) => console.error('Error:', error)
     });
-this.itemSeervice.ingredients$.subscribe((value) => {
- console.log(value);
+ this.itemService.ingredients$.subscribe((ingredients) => {
+  this.getprice();
 });
 
     this.DestroyRef.onDestroy(()=>{
       subscription.unsubscribe();
      });
+  }
+  getprice(){
+    this.price = 0;
+    this.price = this.itemService.getprice(this.burgers);
+  }
+  onClear(){
+    this.price = 0;
+    this.itemService.onClear();
   }
  
   

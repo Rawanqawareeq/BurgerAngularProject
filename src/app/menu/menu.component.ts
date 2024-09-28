@@ -4,6 +4,7 @@ import { Menu } from './menu.module';
 import { NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ItemService } from '../burger-item/item/item.service';
+import { Ingredients, types } from '../burger-item/burger.model';
 
 @Component({
   selector: 'app-menu',
@@ -27,7 +28,7 @@ export class MenuComponent implements OnInit {
       subscription.unsubscribe();
     })
   }
-  onClick(){
-      this.itemService.onBurgerTypechange();
+  onClick(ingredients : types[]){
+      this.itemService.onBurgerTypechange(ingredients);
   }
 }

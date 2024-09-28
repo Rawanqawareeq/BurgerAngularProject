@@ -6,7 +6,7 @@
         "tomato","onion","beef","lettuce"
        ],
        "price":16,
-       "path":"/images/burger.jpg"
+       "path":"/images/burger.png"
     },
     {
         "id": 2,
@@ -15,7 +15,7 @@
          "tomato","onion","beef","lettuce","tomato","beef","lettuce"
         ],
         "price":29,
-        "path":"/images/doubleBurger.jpg"
+        "path":"/images/doubleBurger.png"
      },
      {
         "id": 3,
@@ -24,6 +24,6 @@
             "tomato","onion","beef","cheese","lettuce"
         ],
         "price":18,
-        "path":"/images/cheeseBurger.jpg"
+        "path":"/images/cheeseBurger.png"
      }
 ]

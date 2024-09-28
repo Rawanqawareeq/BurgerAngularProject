@@ -1,11 +1,13 @@
 export interface Burger{
     "id": number,
-    "name": string,
+    "name": types,
     "path": string,
     "price":number,
 }
 
 export interface Ingredients{
+    "bread-top":number,
+    "bread-bottom":number,
     "beef": number,
      "tomato": number,
      "lettuce": number,
@@ -15,11 +17,11 @@ export interface Ingredients{
      "onion": number,
 }
 export enum types {
-   "beef",
-     "tomato",
-     "lettuce",
-     "leaf",
-     "cheese",
-     "mushroom",
-     "onion",
-}
+    beef = 'beef',
+    tomato = 'tomato',
+    lettuce = 'lettuce',
+    leaf = 'leaf',
+    cheese = 'cheese',
+    mushroom = 'mushroom',
+    onion = 'onion',
+ }

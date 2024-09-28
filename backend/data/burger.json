@@ -2,55 +2,55 @@
     {
        "id": 1,
        "name": "bread-top",
-       "path": "/images/bread-top.svg",
+       "path": "/images/bread-top.png",
        "price":1
     },
     {
        "id": 2,
        "name": "bread-bottom",
-       "path": "/images/bread-bottom.svg",
+       "path": "/images/bread-bottom.png",
        "price":1
     },
     {
        "id": 3,
        "name": "beef",
-       "path": "/images/beef.svg",
+       "path": "/images/beef.png",
        "price":10
      },
      {
         "id": 4,
         "name": "tomato",
-        "path": "/images/tomato.svg",
+        "path": "/images/tomato.png",
         "price":2
       },
       {
         "id": 5,
         "name": "lettuce",
-        "path": "/images/lettuce.svg",
+        "path": "/images/lettuce.png",
         "price":1
       },
       {
         "id": 6,
         "name": "leaf",
-        "path": "/images/leaf.svg",
+        "path": "/images/leaf.png",
         "price":1
       },
       {
         "id": 7,
         "name": "cheese",
-        "path": "/images/cheese.svg",
+        "path": "/images/cheese.png",
         "price":2
       },
       {
         "id": 8,
         "name": "mushroom",
-        "path": "/images/mushroom.svg",
+        "path": "/images/mushroom.png",
         "price":1
       },
       {
         "id": 9,
         "name": "onion",
-        "path": "/images/onion.svg",
+        "path": "/images/onion.png",
         "price":1
       }
 ]

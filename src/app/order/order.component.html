@@ -3,6 +3,13 @@
     <div  class="order-details">
         <h3>Your burger is created</h3>
     <p>Burger ingredients:</p>
+    <ul>
+        <li *ngFor="let burger of burger">
+            <img [src]="burger.path" width="60px" height="45px">
+            <span>{{burger.name}}</span>
+            <span>{{ingredients?.[burger.name]}}</span> </li>
+    </ul>
+    <p>Total Price : {{price}}</p>
     <button class="btn-order">order</button>
     </div>
 </section>

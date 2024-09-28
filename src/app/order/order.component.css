@@ -1,24 +1,79 @@
-.order{
-    background-image: url(/images/best-burger-background.jpg);
+
+.order {
+    background-image: url('/images/best-burger-background.jpg');
     height: 100vh;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    position: relative;
 }
-.order-details{
-    background-color: white;
-    display: inline-block;
-    padding: 10px;
-    border-radius: 10px;
-    margin:10px ;
-    box-shadow: 7px 4px rgba(1, 5, 5, 0.2);
-}
-.btn-order{
-    padding: 3px 80px;
+.order-details {
+    position: absolute;
+    left: 100px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
     border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    animation: fadeInUp 1s ease-in-out;
+    transition: transform 0.3s ease;
+}
+.order-details:hover {
+    transform: translateY(-10px);
+}
+.order-details h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.order-details p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.btn-order {
+    padding: 10px 50px;
+    border-radius: 25px;
     color: white;
-    border: 0px;
-    font-size: medium;
+    border: none;
+    font-size: 18px;
     background-color: rgb(0, 110, 255);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 110, 255, 0.3);
+}
+
+.btn-order:hover {
+    background-color: rgb(0, 90, 200);
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 90, 200, 0.4);
+}
+ul li{
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

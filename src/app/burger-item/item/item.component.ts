@@ -1,6 +1,7 @@
 import { Component, inject, Input, OnInit } from '@angular/core';
 import { ItemService } from './item.service';
 import { subscribe } from 'diagnostics_channel';
+import { Ingredients, types } from '../burger.model';
 
 @Component({
   selector: 'app-item',
@@ -11,19 +12,25 @@ import { subscribe } from 'diagnostics_channel';
 })
 export class ItemComponent implements OnInit {
   @Input() price!: number;
-  @Input() name!: string;
+  @Input() name!: types;
   @Input() path!: string;
-  count:any;
+  ingredients?: Ingredients;
+
   constructor(private itemService :ItemService){}
  
   ngOnInit(): void {
-    this.count = this.itemService.ingredients;
+    const subscribtion = this.itemService.ingredients$.subscribe((ingredients)=>this.ingredients = ingredients);
   }
-  increment(name:any){
-       this.itemService.increment(name)
+
+  increment(name:types){
+       this.itemService.increment(name);
   }
-  decrement(name:any){
-    this.itemService.decrement()
+  decrement(name:types){
+    this.itemService.decrement(name)
+  }
+  getCount(name:types){
+    return this.ingredients?.[name];
+
   }
 
 }

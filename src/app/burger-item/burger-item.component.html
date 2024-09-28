@@ -9,15 +9,15 @@
     <h2>Add Ingredients to your burger</h2>
     <ul class="burger-items">
       <li *ngFor="let burger of burgers |slice:2" >
-        <app-item [path]="'/images/bread-top.png'" [price]=burger.price [name]=burger.name></app-item>
+        <app-item [path]="burger.path" [price]=burger.price [name]=burger.name></app-item>
       </li>
     </ul>
    
-   <p>Total Price : $20</p>
+   <p  >Total Price : {{price}}</p>
   </div> 
   <div class="btn">
-     <button class="finish" routerLink="/order">Finish</button>
-     <button class="clear">Clear</button>
+     <button class="finish" routerLink="/order" >Finish</button>
+     <button class="clear" (click)="onClear()">Clear</button>
   </div>
 </div>
 
