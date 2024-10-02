@@ -24,16 +24,21 @@ constructor() { }
 increment(value:types) {
   this.ingredients[value]+=1;
     this.ingredients$.next({...this.ingredients})
-    this.ingredientsBurger$.next([...this.ingredientsBurger$.getValue(), value]);
+    this.ingredientsBurger$.next([value,...this.ingredientsBurger$.getValue()]);
 
    }
     decrement(value:types) {
       this.ingredients[value] = Math.max(this.ingredients[value]-=1,0);
-      this.ingredients$.next({...this.ingredients})
-      const currentIngredients = this.ingredientsBurger$.getValue();
-      const updatedIngredients = currentIngredients.filter(ingredient => ingredient !== value);
+      this.ingredients$.next({...this.ingredients});
 
-      this.ingredientsBurger$.next(updatedIngredients);
+      const currentIngredients = this.ingredientsBurger$.getValue();
+      const index = currentIngredients.indexOf(value);
+     if(index > -1){
+      currentIngredients.splice(index, 1);
+      this.ingredientsBurger$.next(currentIngredients);
+
+     }
+
 
      
       }
