@@ -4,8 +4,7 @@ import { Menu } from './menu.module';
 import { NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ItemService } from '../burger-item/item/item.service';
-import { Ingredients, types } from '../burger-item/burger.model';
-
+import { types } from '../burger-item/burger.model';
 @Component({
   selector: 'app-menu',
   standalone: true,
@@ -13,7 +12,6 @@ import { Ingredients, types } from '../burger-item/burger.model';
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css'
 })
-
 export class MenuComponent implements OnInit {
    constructor(private itemService : ItemService){} 
    private menuService = inject(MenuService);

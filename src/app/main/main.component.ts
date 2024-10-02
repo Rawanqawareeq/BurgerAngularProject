@@ -18,18 +18,16 @@ export class MainComponent implements OnInit {
   burgeritem:Burger[] = [];
   ingredientsBurger?:types[];
   ngOnInit(): void {
-      const subscription = this.itemService.ingredientsBurger$.subscribe(
+      const subscription1 = this.itemService.ingredientsBurger$.subscribe(
+
         {next:(ingredientsBurger) => this.ingredientsBurger = ingredientsBurger}  
       );
       const subscription2 = this.burger.loadBurgger().subscribe(
-        {next:(data) => this.burgeritem =  data}
-         
+        {next:(data) => this.burgeritem =  data}     
       )
   }
   getimages(name : types){
    const item = this.burgeritem.find(burger => burger.name === name);
    return item?.path;
-
   }
- 
 }

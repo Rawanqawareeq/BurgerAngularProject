@@ -13,7 +13,6 @@ import { NgFor } from '@angular/common';
 })
 export class OrderComponent implements OnInit {
    ingredients?:Ingredients;
-   
     constructor(private itemService : ItemService , private bruggerItemService : BruggerItemService){}
     burger: Burger[] = [];
     price : number =0;

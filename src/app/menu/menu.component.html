@@ -5,7 +5,6 @@
         <h5>{{item.name}}</h5>
         <div class="ingredient">
             <p *ngFor="let ingredient of item.ingredients">{{ingredient}},</p>
-
         </div>
         <p>{{item.price}}</p>
         <button (click)="onClick(item.ingredients)">Choose</button>

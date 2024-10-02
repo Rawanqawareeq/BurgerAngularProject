@@ -7,11 +7,9 @@ export const routes: Routes = [
     {
         path:'',
         component:MainComponent,
-
     },
     {
         path:'order',
         component:OrderComponent,
-
     }
 ];

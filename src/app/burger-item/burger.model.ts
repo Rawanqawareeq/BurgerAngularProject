@@ -4,7 +4,6 @@ export interface Burger{
     "path": string,
     "price":number,
 }
-
 export interface Ingredients{
     "bread-top":number,
     "bread-bottom":number,

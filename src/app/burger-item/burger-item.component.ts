@@ -25,10 +25,9 @@ export class BruggerItemComponent  implements OnInit {
                        this.getprice() },
       error: (error) => console.error('Error:', error)
     });
- this.itemService.ingredients$.subscribe((ingredients) => {
+ this.itemService.ingredients$.subscribe(() => {
   this.getprice();
 });
-
     this.DestroyRef.onDestroy(()=>{
       subscription.unsubscribe();
      });
@@ -41,6 +40,4 @@ export class BruggerItemComponent  implements OnInit {
     this.price = 0;
     this.itemService.onClear();
   }
- 
-  
 }

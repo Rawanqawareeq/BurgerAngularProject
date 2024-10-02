@@ -8,8 +8,6 @@ import { catchError, map, tap, throwError } from 'rxjs';
 })
 export class BruggerItemService {
   private httpClient = inject(HttpClient);
-  private DestroyRef = inject(DestroyRef);
-  private burger = signal<Burger[]>([]);
   constructor(){ }
   loadBurgger() {
     return this.fetchBurrger('http://localhost:4000/ingredients','something an error ...');
@@ -19,9 +17,6 @@ export class BruggerItemService {
       map(data => data , catchError((error)=>
         { console.log(error);
          return throwError(()=> new Error(errorMessage))}))
-     )
-     
-      
+     )  
   }
-
 }

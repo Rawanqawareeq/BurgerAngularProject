@@ -25,7 +25,6 @@ increment(value:types) {
   this.ingredients[value]+=1;
     this.ingredients$.next({...this.ingredients})
     this.ingredientsBurger$.next([value,...this.ingredientsBurger$.getValue()]);
-
    }
     decrement(value:types) {
       this.ingredients[value] = Math.max(this.ingredients[value]-=1,0);
@@ -36,12 +35,7 @@ increment(value:types) {
      if(index > -1){
       currentIngredients.splice(index, 1);
       this.ingredientsBurger$.next(currentIngredients);
-
-     }
-
-
-     
-      }
+     }}
 
  onBurgerTypechange(ingredients:types[]){
   this.onClear();
@@ -68,6 +62,4 @@ this.ingredientsBurger$.next([]);
   this.price = 0;
   burgers.map((burger)=> this.price +=burger.price * this.ingredients[burger.name]);
   return this.price;
-}
-
-}
+}}

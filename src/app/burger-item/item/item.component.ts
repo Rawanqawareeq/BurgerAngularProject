@@ -15,13 +15,10 @@ export class ItemComponent implements OnInit {
   @Input() name!: types;
   @Input() path!: string;
   ingredients?: Ingredients;
-
   constructor(private itemService :ItemService){}
- 
   ngOnInit(): void {
     const subscribtion = this.itemService.ingredients$.subscribe((ingredients)=>this.ingredients = ingredients);
   }
-
   increment(name:types){
        this.itemService.increment(name);
   }
