@@ -19,18 +19,27 @@ export class ItemService {
   }
   public price : number =0;
 public ingredients$ = new BehaviorSubject<Ingredients>(this.ingredients);
+public ingredientsBurger$ = new BehaviorSubject<types[]>([]);
 constructor() { }
 increment(value:types) {
   this.ingredients[value]+=1;
     this.ingredients$.next({...this.ingredients})
-    }
+    this.ingredientsBurger$.next([...this.ingredientsBurger$.getValue(), value]);
+
+   }
     decrement(value:types) {
       this.ingredients[value] = Math.max(this.ingredients[value]-=1,0);
       this.ingredients$.next({...this.ingredients})
+      const currentIngredients = this.ingredientsBurger$.getValue();
+      const updatedIngredients = currentIngredients.filter(ingredient => ingredient !== value);
+
+      this.ingredientsBurger$.next(updatedIngredients);
+
      
       }
 
  onBurgerTypechange(ingredients:types[]){
+  this.onClear();
   ingredients.map(ingredient => this.increment(types[ingredient]))
  }
  onClear(){
@@ -47,6 +56,8 @@ increment(value:types) {
 };
 this.price = 0;
 this.ingredients$.next({ ...this.ingredients });
+this.ingredientsBurger$.next([]);
+
  }
  getprice(burgers:Burger[]) :number {
   this.price = 0;

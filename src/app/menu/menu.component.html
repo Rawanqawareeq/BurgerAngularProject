@@ -3,7 +3,10 @@
         <img [src]="item.path" width="180px" height="120px">
        <div class="menu-details">
         <h5>{{item.name}}</h5>
-        <p >{{item.ingredients}}</p>
+        <div class="ingredient">
+            <p *ngFor="let ingredient of item.ingredients">{{ingredient}},</p>
+
+        </div>
         <p>{{item.price}}</p>
         <button (click)="onClick(item.ingredients)">Choose</button>
        </div>

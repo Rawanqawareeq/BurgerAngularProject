@@ -9,7 +9,17 @@
 }
 .menu-details p{
     font-size:xx-small;
+    
 }
+.ingredient{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 2px;
+}
+
 .menu-details{
   position: absolute;
  background-color: rgb(0,0, 0,0.5);
@@ -22,7 +32,7 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 color: white;
-line-height: 0.2;
+line-height: 0.1;
 }
 .menu-item img{
     border-radius:10px ;

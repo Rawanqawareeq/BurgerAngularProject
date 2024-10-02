@@ -9,13 +9,28 @@
      display: flex;
      justify-content:space-between;
      align-items: center;
-     width: calc(50%);
+     width: calc(60%);
      background-color: gainsboro;
  }
  .main-backgorund{
-     width: calc(50%);
+     width: calc(40%);
+     display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ .main-backgorund img{
+    width: 100px;
+    height: 50px;
+ }
+ .images{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
  }
  .app-burger-item{
      width: calc(100%);
-     overflow-y: scroll;
+     overflow-y: auto;
+     height: 100vh;
+     overflow-x: hidden;
  }
